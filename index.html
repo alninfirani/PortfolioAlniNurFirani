@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alni Nur Firani – Learning Design Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,600;0,800;1,300&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --teal:    #0ABFBC;
+      --coral:   #F76E6E;
+      --gold:    #F7C948;
+      --violet:  #7C4DFF;
+      --mint:    #C8F7DC;
+      --navy:    #0D1B2A;
+      --offwhite:#F5F2EE;
+      --gray:    #6B7080;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--offwhite);
+      color: var(--navy);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 4rem;
+      background: rgba(245,242,238,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    .nav-logo {
+      font-family: 'Fraunces', serif;
+      font-size: 1.2rem; font-weight: 800;
+      color: var(--navy);
+      letter-spacing: -0.5px;
+    }
+    .nav-logo span { color: var(--teal); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      text-decoration: none; color: var(--navy);
+      font-size: 0.88rem; font-weight: 500;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--teal); }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 7rem 4rem 4rem;
+      gap: 3rem;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    /* colourful blob background */
+    #hero::before {
+      content: '';
+      position: absolute; top: -120px; right: -120px;
+      width: 700px; height: 700px; border-radius: 50%;
+      background: radial-gradient(circle at 40% 40%, #0ABFBC55, transparent 60%),
+                  radial-gradient(circle at 70% 70%, #7C4DFF33, transparent 60%),
+                  radial-gradient(circle at 20% 80%, #F7C94844, transparent 50%);
+      animation: blobSpin 18s linear infinite;
+      pointer-events: none;
+    }
+    #hero::after {
+      content: '';
+      position: absolute; bottom: -80px; left: -80px;
+      width: 500px; height: 500px; border-radius: 50%;
+      background: radial-gradient(circle, #F76E6E33, transparent 65%);
+      animation: blobSpin 25s linear infinite reverse;
+      pointer-events: none;
+    }
+    @keyframes blobSpin { to { transform: rotate(360deg); } }
+
+    .hero-text { position: relative; z-index: 2; }
+    .hero-tag {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      font-size: 0.75rem; font-weight: 600; letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: .35rem .9rem;
+      border-radius: 99px;
+      margin-bottom: 1.2rem;
+      animation: fadeUp .8s ease both;
+    }
+    h1 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2.8rem, 5vw, 5rem);
+      font-weight: 800; line-height: 1.05;
+      letter-spacing: -2px;
+      animation: fadeUp .8s .1s ease both;
+    }
+    h1 .accent { color: var(--teal); }
+    .hero-subtitle {
+      margin-top: 1rem;
+      font-size: 1.1rem; color: var(--gray);
+      max-width: 480px; line-height: 1.7;
+      animation: fadeUp .8s .2s ease both;
+    }
+    .hero-cta {
+      margin-top: 2rem;
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      animation: fadeUp .8s .3s ease both;
+    }
+    .btn {
+      display: inline-flex; align-items: center; gap: .5rem;
+      padding: .8rem 1.8rem;
+      border-radius: 99px;
+      font-size: .9rem; font-weight: 600;
+      text-decoration: none;
+      transition: transform .2s, box-shadow .2s;
+      cursor: pointer;
+    }
+    .btn:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(0,0,0,.15); }
+    .btn-primary { background: var(--navy); color: #fff; }
+    .btn-outline { background: transparent; border: 2px solid var(--navy); color: var(--navy); }
+    .btn-outline:hover { background: var(--navy); color: #fff; }
+
+    .hero-stats {
+      display: flex; gap: 2.5rem; margin-top: 2.5rem;
+      animation: fadeUp .8s .4s ease both;
+    }
+    .stat-num {
+      font-family: 'Fraunces', serif;
+      font-size: 2.2rem; font-weight: 800; color: var(--navy);
+    }
+    .stat-label { font-size: .78rem; color: var(--gray); text-transform: uppercase; letter-spacing: .06em; }
+
+    /* Hero right side – card stack */
+    .hero-visual {
+      position: relative; z-index: 2;
+      display: flex; justify-content: center; align-items: center;
+      animation: fadeUp .8s .2s ease both;
+    }
+    .profile-card {
+      background: #fff;
+      border-radius: 24px;
+      padding: 2.5rem;
+      box-shadow: 0 30px 70px rgba(0,0,0,.12);
+      max-width: 340px; width: 100%;
+      position: relative;
+    }
+    .profile-card::before {
+      content: '';
+      position: absolute; top: -3px; left: -3px; right: -3px; bottom: -3px;
+      border-radius: 27px;
+      background: linear-gradient(135deg, var(--teal), var(--violet), var(--coral));
+      z-index: -1;
+    }
+    .profile-avatar {
+      width: 96px; height: 96px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--teal), var(--violet));
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Fraunces', serif;
+      font-size: 2.5rem; color: #fff; font-weight: 800;
+      margin: 0 auto 1.2rem;
+    }
+    .profile-name {
+      font-family: 'Fraunces', serif;
+      font-size: 1.3rem; font-weight: 700;
+      text-align: center; margin-bottom: .3rem;
+    }
+    .profile-role {
+      text-align: center; color: var(--gray);
+      font-size: .82rem; line-height: 1.5;
+      margin-bottom: 1.2rem;
+    }
+    .profile-chips {
+      display: flex; flex-wrap: wrap; gap: .5rem; justify-content: center;
+    }
+    .chip {
+      padding: .3rem .75rem;
+      border-radius: 99px;
+      font-size: .72rem; font-weight: 600;
+    }
+    .chip-teal   { background: #E0FAF9; color: #0899A0; }
+    .chip-violet { background: #EDE8FF; color: #6030DD; }
+    .chip-coral  { background: #FDEAEA; color: #C94343; }
+    .chip-gold   { background: #FEF8DC; color: #A87B00; }
+
+    /* floating decorative cards */
+    .float-card {
+      position: absolute;
+      background: #fff; border-radius: 16px;
+      padding: .8rem 1.2rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,.10);
+      font-size: .78rem; font-weight: 600;
+      display: flex; align-items: center; gap: .5rem;
+      animation: float 4s ease-in-out infinite;
+    }
+    .float-card:nth-child(2) { top: -30px; right: -20px; animation-delay: -1s; }
+    .float-card:nth-child(3) { bottom: 20px; left: -30px; animation-delay: -2s; }
+    .float-icon { font-size: 1.2rem; }
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50%      { transform: translateY(-10px); }
+    }
+
+    /* ── SECTION BASE ── */
+    section { padding: 6rem 4rem; }
+    .section-tag {
+      display: inline-block;
+      font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .section-title {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800; line-height: 1.1;
+      letter-spacing: -1px; margin-bottom: 1rem;
+    }
+    .section-sub { color: var(--gray); font-size: 1rem; max-width: 520px; line-height: 1.7; }
+
+    /* ── ABOUT ── */
+    #about {
+      background: var(--navy);
+      color: #fff;
+    }
+    #about .section-tag { color: var(--gold); }
+    #about .section-title { color: #fff; }
+    #about .section-sub { color: rgba(255,255,255,.65); max-width: 600px; }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; margin-top: 3rem; align-items: start;
+    }
+    .about-body { font-size: 1rem; line-height: 1.8; color: rgba(255,255,255,.8); }
+    .about-body p + p { margin-top: 1rem; }
+    .competency-list {
+      display: grid; grid-template-columns: 1fr 1fr; gap: .75rem;
+    }
+    .competency-item {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 12px;
+      padding: .7rem 1rem;
+      font-size: .82rem; font-weight: 500;
+      display: flex; align-items: center; gap: .6rem;
+    }
+    .competency-dot {
+      width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+    }
+
+    /* ── EXPERIENCE ── */
+    #experience { background: var(--offwhite); }
+    #experience .section-tag { color: var(--teal); }
+    .exp-timeline { margin-top: 3rem; display: flex; flex-direction: column; gap: 2rem; }
+    .exp-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 2rem 2.4rem;
+      border-left: 6px solid transparent;
+      box-shadow: 0 4px 20px rgba(0,0,0,.06);
+      position: relative;
+      transition: transform .25s, box-shadow .25s;
+      cursor: default;
+    }
+    .exp-card:hover { transform: translateX(6px); box-shadow: 0 8px 32px rgba(0,0,0,.1); }
+    .exp-card.c1 { border-color: var(--teal); }
+    .exp-card.c2 { border-color: var(--violet); }
+    .exp-card.c3 { border-color: var(--coral); }
+    .exp-card.c4 { border-color: var(--gold); }
+    .exp-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: .5rem; }
+    .exp-title {
+      font-family: 'Fraunces', serif;
+      font-size: 1.2rem; font-weight: 700;
+    }
+    .exp-period {
+      font-size: .78rem; font-weight: 600;
+      padding: .3rem .8rem; border-radius: 99px; background: var(--offwhite);
+      color: var(--gray); white-space: nowrap;
+    }
+    .exp-company { color: var(--gray); font-size: .88rem; margin: .3rem 0 1rem; }
+    .exp-achievements { list-style: none; display: flex; flex-direction: column; gap: .5rem; }
+    .exp-achievements li {
+      font-size: .88rem; line-height: 1.6; color: #3A3F50;
+      padding-left: 1.2rem; position: relative;
+    }
+    .exp-achievements li::before {
+      content: '→'; position: absolute; left: 0;
+      color: var(--teal); font-weight: 700;
+    }
+
+    /* ── SKILLS ── */
+    #skills { background: #fff; }
+    #skills .section-tag { color: var(--coral); }
+    .skills-grid {
+      margin-top: 3rem;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+    .skill-card {
+      border-radius: 20px; padding: 1.8rem;
+      position: relative; overflow: hidden;
+    }
+    .skill-card::after {
+      content: '';
+      position: absolute; top: -40px; right: -40px;
+      width: 120px; height: 120px; border-radius: 50%;
+      background: rgba(255,255,255,.18);
+    }
+    .skill-card.s1 { background: linear-gradient(135deg, #0ABFBC, #12D9D6); color: #fff; }
+    .skill-card.s2 { background: linear-gradient(135deg, #7C4DFF, #A07AFE); color: #fff; }
+    .skill-card.s3 { background: linear-gradient(135deg, #F76E6E, #F9A09A); color: #fff; }
+    .skill-card.s4 { background: linear-gradient(135deg, #F7C948, #FBD970); color: var(--navy); }
+    .skill-card.s5 { background: linear-gradient(135deg, #0D1B2A, #1E3250); color: #fff; }
+    .skill-card.s6 { background: linear-gradient(135deg, #11C784, #4EDBA8); color: #fff; }
+    .skill-icon { font-size: 2rem; margin-bottom: .8rem; display: block; }
+    .skill-name { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 700; margin-bottom: .6rem; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: .4rem; }
+    .skill-tag {
+      background: rgba(255,255,255,.22); border-radius: 99px;
+      padding: .22rem .65rem; font-size: .7rem; font-weight: 600;
+    }
+    .skill-card.s4 .skill-tag { background: rgba(0,0,0,.1); }
+
+    /* ── CERTIFICATIONS ── */
+    #certifications { background: var(--offwhite); }
+    #certifications .section-tag { color: var(--violet); }
+    .cert-grid {
+      margin-top: 3rem;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .cert-card {
+      background: #fff;
+      border-radius: 20px; padding: 1.8rem;
+      border: 2px solid transparent;
+      box-shadow: 0 4px 16px rgba(0,0,0,.06);
+      transition: border-color .25s, transform .25s;
+    }
+    .cert-card:hover { border-color: var(--violet); transform: translateY(-4px); }
+    .cert-logo { font-size: 2rem; margin-bottom: .8rem; }
+    .cert-name { font-family: 'Fraunces', serif; font-size: 1.05rem; font-weight: 700; margin-bottom: .3rem; }
+    .cert-issuer { font-size: .82rem; color: var(--gray); }
+
+    /* ── EDUCATION ── */
+    #education { background: var(--navy); }
+    #education .section-tag { color: var(--mint); }
+    #education .section-title { color: #fff; }
+    .edu-grid {
+      margin-top: 3rem;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .edu-card {
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 20px; padding: 2rem;
+      transition: background .25s;
+    }
+    .edu-card:hover { background: rgba(255,255,255,.11); }
+    .edu-degree {
+      font-family: 'Fraunces', serif;
+      font-size: 1.1rem; font-weight: 700; color: #fff;
+      margin-bottom: .3rem;
+    }
+    .edu-field { color: var(--gold); font-size: .85rem; font-weight: 600; margin-bottom: .6rem; }
+    .edu-school { color: rgba(255,255,255,.6); font-size: .85rem; }
+    .edu-detail {
+      margin-top: .6rem; font-size: .8rem;
+      color: rgba(255,255,255,.45);
+    }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--offwhite); text-align: center; }
+    #contact .section-tag { color: var(--coral); }
+    .contact-subtitle { color: var(--gray); font-size: 1rem; max-width: 480px; margin: 0 auto 2.5rem; line-height: 1.7; }
+    .contact-links {
+      display: flex; justify-content: center; gap: 1.2rem; flex-wrap: wrap;
+    }
+    .contact-link {
+      display: flex; align-items: center; gap: .6rem;
+      padding: .9rem 1.8rem;
+      border-radius: 99px;
+      background: #fff;
+      border: 2px solid rgba(0,0,0,.08);
+      text-decoration: none; color: var(--navy);
+      font-size: .88rem; font-weight: 600;
+      box-shadow: 0 4px 14px rgba(0,0,0,.06);
+      transition: transform .2s, box-shadow .2s, border-color .2s;
+    }
+    .contact-link:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(0,0,0,.12); border-color: var(--teal); color: var(--teal); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy); color: rgba(255,255,255,.5);
+      text-align: center; padding: 2rem; font-size: .82rem;
+    }
+    footer a { color: var(--teal); text-decoration: none; }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .reveal {
+      opacity: 0; transform: translateY(32px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      #hero { grid-template-columns: 1fr; padding: 7rem 1.5rem 4rem; }
+      .hero-visual { display: none; }
+      section { padding: 4rem 1.5rem; }
+      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .competency-list { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Alni<span>.</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#certifications">Certifications</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="mailto:alninfirani@gmail.com" class="btn btn-primary" style="border-radius:99px;font-size:.82rem;padding:.6rem 1.4rem;">Hire Me</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-text">
+    <span class="hero-tag">✨ Open to Opportunities</span>
+    <h1>Learning Design<br />&amp; <span class="accent">Programme</span><br />Development</h1>
+    <p class="hero-subtitle">Hi! I'm <strong>Alni Nur Firani</strong> — an Instructional Design &amp; Programme Development professional crafting high-impact learning experiences across EdTech ecosystems in Indonesia and beyond.</p>
+    <div class="hero-cta">
+      <a href="#experience" class="btn btn-primary">View My Work</a>
+      <a href="https://www.notion.so/Alni-Nur-Firani-s-Portfolio-8bac2dad0c0a407f8d8cc9c5ffd87b60" target="_blank" class="btn btn-outline">Portfolio Notion →</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">5+</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div>
+        <div class="stat-num">200+</div>
+        <div class="stat-label">Programmes Built</div>
+      </div>
+      <div>
+        <div class="stat-num">10+</div>
+        <div class="stat-label">Team Members Led</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <!-- Floating card top-right -->
+    <div class="float-card" style="top:-28px;right:-20px;">
+      <span class="float-icon">🎓</span> ADDIE Certified
+    </div>
+    <!-- Profile card -->
+    <div class="profile-card">
+      <div class="profile-avatar">A</div>
+      <div class="profile-name">Alni Nur Firani</div>
+      <div class="profile-role">Learning Design &amp; Programme<br/>Development Manager</div>
+      <div class="profile-chips">
+        <span class="chip chip-teal">ADDIE</span>
+        <span class="chip chip-violet">Bloom's Taxonomy</span>
+        <span class="chip chip-coral">LXD</span>
+        <span class="chip chip-gold">EdTech</span>
+        <span class="chip chip-teal">QA</span>
+        <span class="chip chip-violet">Instructional Design</span>
+      </div>
+    </div>
+    <!-- Floating card bottom-left -->
+    <div class="float-card" style="bottom:10px;left:-30px;">
+      <span class="float-icon">📍</span> Bogor, Indonesia
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <span class="section-tag">Who I Am</span>
+  <h2 class="section-title">Designing Learning<br />That Truly Works</h2>
+  <div class="about-grid">
+    <div class="about-body reveal">
+      <p>I am an Instructional Design and Programme Development professional with over 5 years of experience designing and scaling high-impact learning programmes across EdTech ecosystems.</p>
+      <p>I have a proven track record in leading end-to-end development of 200+ learning programmes, ensuring alignment with pedagogical standards, learner needs, and measurable outcomes.</p>
+      <p>My approach is deeply rooted in translating learning science principles — ADDIE, Bloom's Taxonomy — into practical, scalable training systems. I am passionate about improving education quality in Indonesia and contributing to system-level change through evidence-based programme design.</p>
+    </div>
+    <div class="reveal" style="animation-delay:.1s">
+      <div class="competency-list">
+        <div class="competency-item"><span class="competency-dot" style="background:var(--teal)"></span>Programme &amp; Training Design</div>
+        <div class="competency-item"><span class="competency-dot" style="background:var(--violet)"></span>Instructional Design (ADDIE)</div>
+        <div class="competency-item"><span class="competency-dot" style="background:var(--coral)"></span>Learning Experience Design</div>
+        <div class="competency-item"><span class="competency-dot" style="background:var(--gold)"></span>Data-Driven Improvement</div>
+        <div class="competency-item"><span class="competency-dot" style="background:var(--teal)"></span>Stakeholder Management</div>
+        <div class="competency-item"><span class="competency-dot" style="background:var(--violet)"></span>Team Leadership</div>
+        <div class="competency-item"><span class="competency-dot" style="background:var(--coral)"></span>Curriculum Development &amp; QA</div>
+        <div class="competency-item"><span class="competency-dot" style="background:var(--gold)"></span>Learning Product Dev (EdTech)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <span class="section-tag">Career Journey</span>
+  <h2 class="section-title">Professional Experience</h2>
+  <p class="section-sub">A track record of building impactful learning programmes and leading curriculum teams across Indonesia and Australia.</p>
+
+  <div class="exp-timeline">
+
+    <div class="exp-card c1 reveal">
+      <div class="exp-header">
+        <div>
+          <div class="exp-title">Instructional Designer – Quality Assurance</div>
+          <div class="exp-company">The KPI Institute – Institute Learning Management Science · Remote, Australia</div>
+        </div>
+        <span class="exp-period">Jan 2024 – Present</span>
+      </div>
+      <ul class="exp-achievements">
+        <li>Reviewed, evaluated, and improved 40+ online courses ensuring alignment with learning objectives and pedagogical frameworks</li>
+        <li>Conducted quality assurance audits across 50+ learning modules, improving clarity, engagement, and learning effectiveness</li>
+        <li>Applied ADDIE methodology to systematically enhance course design, activities, and assessments</li>
+        <li>Analysed learner feedback and performance data to provide evidence-based recommendations for programme improvement</li>
+        <li>Collaborated cross-functionally with curriculum developers, SMEs, and content teams to maintain high-quality standards</li>
+      </ul>
+    </div>
+
+    <div class="exp-card c2 reveal">
+      <div class="exp-header">
+        <div>
+          <div class="exp-title">Curriculum Manager</div>
+          <div class="exp-company">Akademi Asia · Jakarta – Remote</div>
+        </div>
+        <span class="exp-period">Jan 2024 – Jun 2024</span>
+      </div>
+      <ul class="exp-achievements">
+        <li>Designed and launched multiple online programmes based on user needs analysis and market research</li>
+        <li>Developed structured learning journeys using Bloom's Taxonomy to ensure effective learning progression</li>
+        <li>Built scalable programme structures for both self-paced and live bootcamp formats</li>
+        <li>Collaborated with SMEs to develop high-quality learning materials and course content</li>
+        <li>Contributed to programme positioning and pricing strategies</li>
+      </ul>
+    </div>
+
+    <div class="exp-card c3 reveal">
+      <div class="exp-header">
+        <div>
+          <div class="exp-title">Head of Curriculum</div>
+          <div class="exp-company">Kelas.com / Kelas.work – Bootcamp by Kelas.com (PT Mega Harapan Mulia)</div>
+        </div>
+        <span class="exp-period">Jul 2021 – Dec 2023</span>
+      </div>
+      <ul class="exp-achievements">
+        <li>Led development of learning products from scratch, including system design, SOPs, and curriculum frameworks</li>
+        <li>Managed and mentored a team of 10+ members, ensuring delivery quality and performance</li>
+        <li>Designed and implemented OKRs and performance metrics to track programme effectiveness and product impact</li>
+        <li>Oversaw quality control across syllabus, learning materials, and content production</li>
+        <li>Reported directly to CEO, providing strategic insights on product and programme development</li>
+      </ul>
+    </div>
+
+    <div class="exp-card c4 reveal">
+      <div class="exp-header">
+        <div>
+          <div class="exp-title">Curriculum Specialist</div>
+          <div class="exp-company">Kelas.com (PT Mega Harapan Mulia)</div>
+        </div>
+        <span class="exp-period">Jun 2020 – Jul 2021</span>
+      </div>
+      <ul class="exp-achievements">
+        <li>Managed full production cycle from pre-production to post-production for multiple courses</li>
+        <li>Developed syllabi, scripts, and learning materials across diverse subject areas</li>
+        <li>Coordinated with SMEs to ensure content accuracy and relevance</li>
+        <li>Maintained quality standards across all course outputs</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <span class="section-tag">Toolkit</span>
+  <h2 class="section-title">Skills &amp; Expertise</h2>
+  <p class="section-sub">A blend of instructional design methodology, learning technology, and leadership capabilities.</p>
+
+  <div class="skills-grid">
+    <div class="skill-card s1 reveal">
+      <span class="skill-icon">🎯</span>
+      <div class="skill-name">Instructional Design</div>
+      <div class="skill-tags">
+        <span class="skill-tag">ADDIE</span>
+        <span class="skill-tag">Bloom's Taxonomy</span>
+        <span class="skill-tag">LXD</span>
+      </div>
+    </div>
+    <div class="skill-card s2 reveal">
+      <span class="skill-icon">🛠</span>
+      <div class="skill-name">Design Tools</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Articulate Storyline</span>
+        <span class="skill-tag">H5P</span>
+        <span class="skill-tag">Canva</span>
+      </div>
+    </div>
+    <div class="skill-card s3 reveal">
+      <span class="skill-icon">🎓</span>
+      <div class="skill-name">Learning Platforms</div>
+      <div class="skill-tags">
+        <span class="skill-tag">LMS Management</span>
+        <span class="skill-tag">EdTech</span>
+        <span class="skill-tag">e-Learning</span>
+      </div>
+    </div>
+    <div class="skill-card s4 reveal">
+      <span class="skill-icon">📊</span>
+      <div class="skill-name">Data &amp; Research</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Learner Analytics</span>
+        <span class="skill-tag">Market Research</span>
+        <span class="skill-tag">OKR</span>
+      </div>
+    </div>
+    <div class="skill-card s5 reveal">
+      <span class="skill-icon">🤝</span>
+      <div class="skill-name">Leadership</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Team of 10+</span>
+        <span class="skill-tag">Stakeholder Mgmt</span>
+        <span class="skill-tag">Project Mgmt</span>
+      </div>
+    </div>
+    <div class="skill-card s6 reveal">
+      <span class="skill-icon">✍️</span>
+      <div class="skill-name">Content &amp; Writing</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Copywriting</span>
+        <span class="skill-tag">SEO Articles</span>
+        <span class="skill-tag">Prompt Engineering</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <span class="section-tag">Credentials</span>
+  <h2 class="section-title">Certifications</h2>
+  <p class="section-sub">Validated expertise in instructional design and learning programme delivery.</p>
+
+  <div class="cert-grid">
+    <div class="cert-card reveal">
+      <div class="cert-logo">🏆</div>
+      <div class="cert-name">Certified Training Professional</div>
+      <div class="cert-issuer">The KPI Institute</div>
+    </div>
+    <div class="cert-card reveal">
+      <div class="cert-logo">📘</div>
+      <div class="cert-name">Instructional Design Principles for Course Creation</div>
+      <div class="cert-issuer">Eduflow</div>
+    </div>
+    <div class="cert-card reveal">
+      <div class="cert-logo">🎓</div>
+      <div class="cert-name">Master's in Educational Technology</div>
+      <div class="cert-issuer">Universitas Negeri Jakarta · In Progress</div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <span class="section-tag">Education</span>
+  <h2 class="section-title">Academic Background</h2>
+
+  <div class="edu-grid">
+    <div class="edu-card reveal">
+      <div class="edu-degree">Bachelor of Education</div>
+      <div class="edu-field">English Education</div>
+      <div class="edu-school">Universitas Siliwangi</div>
+      <div class="edu-detail">GPA: 3.5 / 4.0</div>
+    </div>
+    <div class="edu-card reveal">
+      <div class="edu-degree">Master's Degree (In Progress)</div>
+      <div class="edu-field">Educational Technology</div>
+      <div class="edu-school">Universitas Negeri Jakarta</div>
+      <div class="edu-detail">Focus: Instructional Design &amp; Learning Technology</div>
+    </div>
+    <div class="edu-card reveal">
+      <div class="edu-degree">Additional Experience</div>
+      <div class="edu-field">Content Writing &amp; VR Learning</div>
+      <div class="edu-school">Tukangkonten.com · Lynx VR Indonesia</div>
+      <div class="edu-detail">SEO content, behavioural-change VR learning flows (2018–Present)</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <span class="section-tag" style="color:var(--coral)">Get In Touch</span>
+  <h2 class="section-title">Let's Work Together</h2>
+  <p class="contact-subtitle">I'm open to learning design roles, instructional design consulting, and EdTech programme development opportunities. Let's connect!</p>
+  <div class="contact-links">
+    <a href="mailto:alninfirani@gmail.com" class="contact-link">
+      <span>📧</span> alninfirani@gmail.com
+    </a>
+    <a href="https://linkedin.com/in/alni-nur-firani-6322a5199/" target="_blank" class="contact-link">
+      <span>💼</span> LinkedIn Profile
+    </a>
+    <a href="https://www.notion.so/Alni-Nur-Firani-s-Portfolio-8bac2dad0c0a407f8d8cc9c5ffd87b60" target="_blank" class="contact-link">
+      <span>📁</span> Notion Portfolio
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>Designed &amp; built for GitHub Pages · <strong style="color:#fff">Alni Nur Firani</strong> · Bogor, Indonesia · <a href="mailto:alninfirani@gmail.com">alninfirani@gmail.com</a></p>
+</footer>
+
+<!-- SCROLL REVEAL SCRIPT -->
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
