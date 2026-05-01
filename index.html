@@ -32,7 +32,7 @@
     nav {
       position: fixed; top: 0; left: 0; width: 100%; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
-      padding: 1rem 4rem;
+      padding: 1rem max(4rem, calc((100vw - 1400px)/2 + 4rem));
       background: rgba(245,242,238,0.85);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(0,0,0,0.06);
@@ -57,11 +57,13 @@
       min-height: 100vh;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      padding: 7rem 4rem 4rem;
+      padding: 7rem 6rem 4rem;
       gap: 3rem;
       align-items: center;
       position: relative;
       overflow: hidden;
+      max-width: 1400px;
+      margin: 0 auto;
     }
     /* colourful blob background */
     #hero::before {
@@ -218,6 +220,9 @@
 
     /* ── SECTION BASE ── */
     section { padding: 6rem 4rem; }
+    section > *:not(.showcase-grid) { max-width: 1100px; margin-left: auto; margin-right: auto; }
+    #hero { max-width: none; }
+    .showcase-grid { max-width: 1200px; margin-left: auto; margin-right: auto; }
     .section-tag {
       display: inline-block;
       font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
@@ -236,6 +241,7 @@
       background: var(--navy);
       color: #fff;
     }
+    #about > * { max-width: 1100px; margin-left: auto; margin-right: auto; }
     #about .section-tag { color: var(--gold); }
     #about .section-title { color: #fff; }
     #about .section-sub { color: rgba(255,255,255,.65); max-width: 600px; }

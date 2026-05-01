@@ -1,6 +1,10 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Articulate Rise — Digital Marketing | Alni Nur Firani</title>
-<style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Articulate Storyline — Interactive e-Learning | Alni Nur Firani</title>
+  <style>
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@300;600;800&family=DM+Sans:wght@300;400;500;600&display=swap');
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -79,29 +83,130 @@ a{text-decoration:none;color:inherit}
 
 @media(max-width:768px){.proj-hero,.proj-section{padding-left:1.5rem;padding-right:1.5rem}.gallery{grid-template-columns:1fr}.video-grid{grid-template-columns:1fr}.pnav{padding:1rem 1.5rem}.process-grid{grid-template-columns:1fr 1fr}}
 
-.rise-full{width:100%;height:80vh;min-height:500px;border:none;border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,.15);display:block;margin-bottom:2rem}
-</style></head><body>
+    /* Articulate embed */
+    .articulate-wrap {
+      position: relative;
+      width: 100%;
+      padding-bottom: 60%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(0,0,0,.15);
+      margin-bottom: 2rem;
+      background: #0D1B2A;
+    }
+    .articulate-wrap iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: none;
+    }
+    .course-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    .course-block { display: flex; flex-direction: column; gap: .8rem; }
+    .course-label {
+      font-family: 'Fraunces', serif;
+      font-size: 1.1rem; font-weight: 800; color: #0D1B2A;
+      margin-bottom: .3rem;
+    }
+    .course-meta { font-size: .82rem; color: #6B7080; line-height: 1.5; }
+    .open-btn {
+      display: inline-flex; align-items: center; gap: .4rem;
+      padding: .6rem 1.2rem; border-radius: 99px;
+      background: #0ABFBC; color: #fff;
+      font-size: .82rem; font-weight: 600;
+      text-decoration: none; width: fit-content;
+      transition: opacity .2s;
+      margin-top: .3rem;
+    }
+    .open-btn:hover { opacity: .85; }
+    @media(max-width: 768px) {
+      .course-pair { grid-template-columns: 1fr; }
+    }
+</style>
+</head>
+<body>
 <nav class="pnav">
   <div class="pnav-logo">Alni<span>.</span></div>
   <a href="index.html" class="back-btn">← Back to Portfolio</a>
 </nav>
+
 <div class="proj-hero">
-  <span class="proj-tag">Articulate Rise · Interactive e-Learning</span>
-  <h1 class="proj-title">Digital Marketing Fundamentals</h1>
-  <p class="proj-sub">An interactive e-learning module built with Articulate Rise — demonstrating hands-on capability with industry-standard authoring tools, structured learning objectives, and assessment components.</p>
+  <span class="proj-tag">Articulate Storyline · Interactive e-Learning</span>
+  <h1 class="proj-title">Interactive e-Learning Modules</h1>
+  <p class="proj-sub">Two interactive e-learning modules built with Articulate Storyline — demonstrating hands-on capability with industry-standard authoring tools, structured learning objectives, branching scenarios, and assessment components aligned with instructional design best practices.</p>
+  <div class="proj-meta">
+    <div class="pm-item"><span class="pm-num">2</span><span class="pm-label">Modules Built</span></div>
+    <div class="pm-item"><span class="pm-num">Storyline</span><span class="pm-label">Authoring Tool</span></div>
+    <div class="pm-item"><span class="pm-num">ADDIE</span><span class="pm-label">Framework Used</span></div>
+    <div class="pm-item"><span class="pm-num">LXD</span><span class="pm-label">Design Approach</span></div>
+  </div>
   <div class="tag-row">
-    <span class="ptag pt-teal">Articulate Rise</span>
+    <span class="ptag pt-teal">Articulate Storyline</span>
     <span class="ptag pt-violet">Interactive e-Learning</span>
-    <span class="ptag pt-gold">ADDIE Framework</span>
-    <span class="ptag pt-coral">Digital Marketing</span>
-    <span class="ptag pt-navy">Assessment Design</span>
+    <span class="ptag pt-gold">ADDIE</span>
+    <span class="ptag pt-coral">Assessment Design</span>
+    <span class="ptag pt-navy">LXD</span>
+    <span class="ptag pt-teal">Instructional Design</span>
   </div>
 </div>
+
 <div class="proj-section">
-  <p class="sec-label">Live Course</p>
-  <h2 class="sec-title">Interactive Module</h2>
-  <p class="sec-body">Click the module below to explore the full interactive course — built entirely in Articulate Rise with structured content blocks, quizzes, and learner-centred design.</p>
-  <iframe class="rise-full" src="rise-course/index.html" title="Digital Marketing Fundamentals"></iframe>
+  <p class="sec-label">Live Interactive Modules</p>
+  <h2 class="sec-title">Explore the Courses</h2>
+  <p class="sec-body">Both modules are fully interactive — click, explore, and complete the activities directly below. Built with Articulate Storyline using evidence-based instructional design principles.</p>
+
+  <div class="course-pair">
+
+    <div class="course-block">
+      <div class="course-label">📘 Module 1 — Substance Abuse</div>
+      <p class="course-meta">An interactive learning module covering substance abuse awareness — designed with scenario-based learning, engaging visuals, and knowledge checks to drive behaviour change and awareness.</p>
+      <div class="articulate-wrap">
+        <iframe src="https://share.articulate.com/uEm_YsSUQC0L1dR8JgkU7" 
+                title="Substance Abuse — Interactive e-Learning"
+                allow="fullscreen"
+                loading="lazy">
+        </iframe>
+      </div>
+      <a href="https://share.articulate.com/uEm_YsSUQC0L1dR8JgkU7" target="_blank" class="open-btn">
+        ↗ Open Fullscreen
+      </a>
+    </div>
+
+    <div class="course-block">
+      <div class="course-label">📗 Module 2 — Digital Marketing Fundamentals</div>
+      <p class="course-meta">An interactive e-learning module on digital marketing fundamentals — structured with clear learning objectives, interactive content blocks, and assessments aligned with Bloom's Taxonomy.</p>
+      <div class="articulate-wrap">
+        <iframe src="https://share.articulate.com/ui9g_Ndde4UY-7FE-Xpgk"
+                title="Digital Marketing Fundamentals — Interactive e-Learning"
+                allow="fullscreen"
+                loading="lazy">
+        </iframe>
+      </div>
+      <a href="https://share.articulate.com/ui9g_Ndde4UY-7FE-Xpgk" target="_blank" class="open-btn">
+        ↗ Open Fullscreen
+      </a>
+    </div>
+
+  </div>
+
+  <div class="divider"></div>
+
+  <p class="sec-label">My Process</p>
+  <h2 class="sec-title">How I Build e-Learning</h2>
+  <div class="process-grid">
+    <div class="proc-card"><div class="proc-num">01</div><div class="proc-title">Needs Analysis</div><div class="proc-desc">Identify learning gaps, target audience, and desired behaviour change</div></div>
+    <div class="proc-card"><div class="proc-num">02</div><div class="proc-title">Learning Objectives</div><div class="proc-desc">Define measurable outcomes using Bloom's Taxonomy (remember → create)</div></div>
+    <div class="proc-card"><div class="proc-num">03</div><div class="proc-title">Storyboard</div><div class="proc-desc">Design slide-by-slide content flow, interactions, and branching scenarios</div></div>
+    <div class="proc-card"><div class="proc-num">04</div><div class="proc-title">Development</div><div class="proc-desc">Build in Articulate Storyline — animations, triggers, variables & interactions</div></div>
+    <div class="proc-card"><div class="proc-num">05</div><div class="proc-title">Assessment Design</div><div class="proc-desc">Knowledge checks, quizzes, and scenario-based questions to measure learning</div></div>
+    <div class="proc-card"><div class="proc-num">06</div><div class="proc-title">Review & QA</div><div class="proc-desc">Test across devices, gather feedback, iterate and improve before launch</div></div>
+  </div>
+
 </div>
 <footer class="proj-footer">
   <p>Alni Nur Firani · <a href="mailto:alninfirani@gmail.com">alninfirani@gmail.com</a> · <a href="index.html">← Back to Portfolio</a></p>
@@ -114,4 +219,6 @@ document.querySelectorAll('.gallery img').forEach(img=>{
     document.getElementById('lb').classList.add('open');
   });
 });
-</script></body></html>
+</script>
+</body>
+</html>
