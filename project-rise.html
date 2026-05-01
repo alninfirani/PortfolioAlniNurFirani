@@ -1,0 +1,117 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Articulate Rise — Digital Marketing | Alni Nur Firani</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@300;600;800&family=DM+Sans:wght@300;400;500;600&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:#F5F2EE;color:#0D1B2A;overflow-x:hidden}
+:root{--teal:#0ABFBC;--coral:#F76E6E;--gold:#F7C948;--violet:#7C4DFF;--navy:#0D1B2A;--offwhite:#F5F2EE;--gray:#6B7080}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+.pnav{position:fixed;top:0;left:0;width:100%;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 3rem;background:rgba(245,242,238,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.06)}
+.pnav-logo{font-family:'Fraunces',serif;font-size:1.1rem;font-weight:800;color:var(--navy)}
+.pnav-logo span{color:var(--teal)}
+.back-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.55rem 1.2rem;border-radius:99px;background:var(--navy);color:#fff;font-size:.82rem;font-weight:600;transition:opacity .2s}
+.back-btn:hover{opacity:.85}
+
+/* HERO */
+.proj-hero{padding:7rem 4rem 4rem;max-width:1100px;margin:0 auto}
+.proj-tag{display:inline-block;background:var(--gold);color:var(--navy);font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.3rem .8rem;border-radius:99px;margin-bottom:1rem}
+.proj-title{font-family:'Fraunces',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:800;line-height:1.1;letter-spacing:-1px;margin-bottom:1rem}
+.proj-sub{color:var(--gray);font-size:1rem;line-height:1.7;max-width:620px;margin-bottom:2rem}
+.proj-meta{display:flex;gap:2rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.pm-item{text-align:center}
+.pm-num{font-family:'Fraunces',serif;font-size:2rem;font-weight:800;color:var(--teal);display:block;line-height:1}
+.pm-label{font-size:.72rem;color:var(--gray);text-transform:uppercase;letter-spacing:.06em}
+
+/* TAGS */
+.tag-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem}
+.ptag{font-size:.75rem;font-weight:600;padding:.3rem .8rem;border-radius:99px}
+.pt-teal{background:#E0FAF9;color:#0899A0}
+.pt-violet{background:#EDE8FF;color:#6030DD}
+.pt-coral{background:#FDEAEA;color:#C94343}
+.pt-gold{background:#FEF8DC;color:#A87B00}
+.pt-navy{background:#E8EBF0;color:#0D1B2A}
+
+/* SECTION */
+.proj-section{max-width:1100px;margin:0 auto;padding:0 4rem 4rem}
+.sec-label{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--teal);margin-bottom:.8rem}
+.sec-title{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:800;margin-bottom:1rem}
+.sec-body{font-size:.95rem;line-height:1.8;color:#3A3F50;margin-bottom:1.5rem}
+
+/* GALLERY */
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem;margin-bottom:3rem}
+.gallery img{width:100%;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,.1);cursor:zoom-in;transition:transform .2s}
+.gallery img:hover{transform:scale(1.02)}
+.gallery-wide{grid-template-columns:1fr}
+.gallery-wide img{max-height:500px;object-fit:cover;object-position:top}
+
+/* LIGHTBOX */
+.lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:999;align-items:center;justify-content:center;cursor:zoom-out}
+.lightbox.open{display:flex}
+.lightbox img{max-width:90vw;max-height:90vh;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+
+/* VIDEO GRID */
+.video-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.5rem;margin-bottom:3rem}
+.yt-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,.12)}
+.yt-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%}
+
+/* PROCESS */
+.process-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;margin-bottom:3rem}
+.proc-card{background:#fff;border-radius:16px;padding:1.4rem;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.proc-num{font-family:'Fraunces',serif;font-size:2rem;font-weight:800;color:var(--teal);margin-bottom:.5rem}
+.proc-title{font-size:.88rem;font-weight:700;margin-bottom:.3rem}
+.proc-desc{font-size:.8rem;color:var(--gray);line-height:1.5}
+
+/* CONFIDENTIAL BOX */
+.conf-box{background:var(--navy);border-radius:20px;padding:2.5rem;color:#fff;margin-bottom:3rem;display:flex;gap:1.5rem;align-items:flex-start}
+.conf-icon-big{font-size:2.5rem;flex-shrink:0}
+.conf-box h3{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:800;margin-bottom:.5rem}
+.conf-box p{font-size:.88rem;color:rgba(255,255,255,.65);line-height:1.7}
+
+/* FOOTER */
+.proj-footer{background:var(--navy);text-align:center;padding:2rem;color:rgba(255,255,255,.5);font-size:.82rem}
+.proj-footer a{color:var(--teal)}
+
+/* DIVIDER */
+.divider{height:1px;background:rgba(0,0,0,.07);margin:0 4rem 3rem;max-width:1100px;margin-left:auto;margin-right:auto}
+
+@media(max-width:768px){.proj-hero,.proj-section{padding-left:1.5rem;padding-right:1.5rem}.gallery{grid-template-columns:1fr}.video-grid{grid-template-columns:1fr}.pnav{padding:1rem 1.5rem}.process-grid{grid-template-columns:1fr 1fr}}
+
+.rise-full{width:100%;height:80vh;min-height:500px;border:none;border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,.15);display:block;margin-bottom:2rem}
+</style></head><body>
+<nav class="pnav">
+  <div class="pnav-logo">Alni<span>.</span></div>
+  <a href="index.html" class="back-btn">← Back to Portfolio</a>
+</nav>
+<div class="proj-hero">
+  <span class="proj-tag">Articulate Rise · Interactive e-Learning</span>
+  <h1 class="proj-title">Digital Marketing Fundamentals</h1>
+  <p class="proj-sub">An interactive e-learning module built with Articulate Rise — demonstrating hands-on capability with industry-standard authoring tools, structured learning objectives, and assessment components.</p>
+  <div class="tag-row">
+    <span class="ptag pt-teal">Articulate Rise</span>
+    <span class="ptag pt-violet">Interactive e-Learning</span>
+    <span class="ptag pt-gold">ADDIE Framework</span>
+    <span class="ptag pt-coral">Digital Marketing</span>
+    <span class="ptag pt-navy">Assessment Design</span>
+  </div>
+</div>
+<div class="proj-section">
+  <p class="sec-label">Live Course</p>
+  <h2 class="sec-title">Interactive Module</h2>
+  <p class="sec-body">Click the module below to explore the full interactive course — built entirely in Articulate Rise with structured content blocks, quizzes, and learner-centred design.</p>
+  <iframe class="rise-full" src="rise-course/index.html" title="Digital Marketing Fundamentals"></iframe>
+</div>
+<footer class="proj-footer">
+  <p>Alni Nur Firani · <a href="mailto:alninfirani@gmail.com">alninfirani@gmail.com</a> · <a href="index.html">← Back to Portfolio</a></p>
+</footer>
+<div class="lightbox" id="lb" onclick="this.classList.remove('open')"><img id="lb-img" src="" alt=""/></div>
+<script>
+document.querySelectorAll('.gallery img').forEach(img=>{
+  img.addEventListener('click',()=>{
+    document.getElementById('lb-img').src=img.src;
+    document.getElementById('lb').classList.add('open');
+  });
+});
+</script></body></html>
