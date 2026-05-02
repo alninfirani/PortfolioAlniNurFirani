@@ -32,7 +32,7 @@
     nav {
       position: fixed; top: 0; left: 0; width: 100%; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
-      padding: 1rem max(4rem, calc((100vw - 1400px)/2 + 4rem));
+      padding: 1rem 2.5rem;
       background: rgba(245,242,238,0.85);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(0,0,0,0.06);
@@ -57,7 +57,7 @@
       min-height: 100vh;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      padding: 7rem 6rem 4rem;
+      padding: 7rem 2.5rem 4rem;
       gap: 3rem;
       align-items: center;
       position: relative;
@@ -219,10 +219,18 @@
     }
 
     /* ── SECTION BASE ── */
-    section { padding: 6rem 4rem; }
-    section > *:not(.showcase-grid) { max-width: 1100px; margin-left: auto; margin-right: auto; }
-    #hero { max-width: none; }
-    .showcase-grid { max-width: 1200px; margin-left: auto; margin-right: auto; }
+    section { padding: 5rem 0; }
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 2.5rem;
+    }
+    #hero {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+    }
     .section-tag {
       display: inline-block;
       font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
@@ -823,7 +831,7 @@
 </section>
 
 <!-- GLOBAL BANNER -->
-<div style="background:var(--navy);padding:1rem 4rem;display:flex;align-items:center;justify-content:center;gap:1.2rem;flex-wrap:wrap;">
+<div style="background:var(--navy);padding:1rem 2.5rem;display:flex;align-items:center;justify-content:center;gap:1.2rem;flex-wrap:wrap;">
   <span style="font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.45);">Experience</span>
   <span style="display:flex;align-items:center;gap:.5rem;font-weight:600;font-size:.88rem;color:#fff;">🌍 Working Globally</span>
   <span style="color:rgba(255,255,255,.25);font-size:.8rem;">·</span>
@@ -831,8 +839,8 @@
 </div>
 
 <!-- IMPACT STRIP -->
-<div id="impact">
-    <div class="impact-inner">
+<div id="impact" style="padding:3.5rem 2.5rem;">
+    <div class="impact-inner" style="max-width:1080px;margin:0 auto;">
     <div class="impact-item reveal">
       <span class="impact-num">200+</span>
       <span class="impact-label">Learning Programmes Developed</span>

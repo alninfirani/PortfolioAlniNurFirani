@@ -13,14 +13,14 @@ body{font-family:'DM Sans',sans-serif;background:#F5F2EE;color:#0D1B2A;overflow-
 a{text-decoration:none;color:inherit}
 
 /* NAV */
-.pnav{position:fixed;top:0;left:0;width:100%;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 3rem;background:rgba(245,242,238,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.06)}
+.pnav{position:fixed;top:0;left:0;width:100%;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 2.5rem;background:rgba(245,242,238,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.06)}
 .pnav-logo{font-family:'Fraunces',serif;font-size:1.1rem;font-weight:800;color:var(--navy)}
 .pnav-logo span{color:var(--teal)}
 .back-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.55rem 1.2rem;border-radius:99px;background:var(--navy);color:#fff;font-size:.82rem;font-weight:600;transition:opacity .2s}
 .back-btn:hover{opacity:.85}
 
 /* HERO */
-.proj-hero{padding:7rem 4rem 4rem;max-width:1100px;margin:0 auto}
+.proj-hero{padding:7rem 2.5rem 3rem;max-width:900px;margin:0 auto}
 .proj-tag{display:inline-block;background:var(--gold);color:var(--navy);font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.3rem .8rem;border-radius:99px;margin-bottom:1rem}
 .proj-title{font-family:'Fraunces',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:800;line-height:1.1;letter-spacing:-1px;margin-bottom:1rem}
 .proj-sub{color:var(--gray);font-size:1rem;line-height:1.7;max-width:620px;margin-bottom:2rem}
@@ -39,7 +39,7 @@ a{text-decoration:none;color:inherit}
 .pt-navy{background:#E8EBF0;color:#0D1B2A}
 
 /* SECTION */
-.proj-section{max-width:1100px;margin:0 auto;padding:0 4rem 4rem}
+.proj-section{max-width:900px;margin:0 auto;padding:0 2.5rem 4rem}
 .sec-label{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--teal);margin-bottom:.8rem}
 .sec-title{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:800;margin-bottom:1rem}
 .sec-body{font-size:.95rem;line-height:1.8;color:#3A3F50;margin-bottom:1.5rem}
@@ -79,7 +79,7 @@ a{text-decoration:none;color:inherit}
 .proj-footer a{color:var(--teal)}
 
 /* DIVIDER */
-.divider{height:1px;background:rgba(0,0,0,.07);margin:0 4rem 3rem;max-width:1100px;margin-left:auto;margin-right:auto}
+.divider{height:1px;background:rgba(0,0,0,.07);max-width:900px;margin:0 auto 3rem}
 
 @media(max-width:768px){.proj-hero,.proj-section{padding-left:1.5rem;padding-right:1.5rem}.gallery{grid-template-columns:1fr}.video-grid{grid-template-columns:1fr}.pnav{padding:1rem 1.5rem}.process-grid{grid-template-columns:1fr 1fr}}
 
@@ -127,6 +127,35 @@ a{text-decoration:none;color:inherit}
     @media(max-width: 768px) {
       .course-pair { grid-template-columns: 1fr; }
     }
+
+    /* ── LAYOUT WIDTH FIX ── */
+    .proj-hero {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 7rem 2.5rem 3rem;
+    }
+    .proj-section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2.5rem 4rem;
+    }
+    .divider {
+      max-width: 900px;
+      margin: 0 auto 3rem;
+      height: 1px;
+      background: rgba(0,0,0,.07);
+    }
+    .pnav {
+      padding: 1rem 2.5rem !important;
+    }
+    /* Fix grids on smaller viewports */
+    .course-pair { gap: 1.5rem; }
+    @media (max-width: 700px) {
+      .course-pair { grid-template-columns: 1fr; }
+      .process-grid { grid-template-columns: 1fr; }
+      .gallery { grid-template-columns: 1fr; }
+    }
+
 </style>
 </head>
 <body>
@@ -139,12 +168,7 @@ a{text-decoration:none;color:inherit}
   <span class="proj-tag">Articulate Storyline · Interactive e-Learning</span>
   <h1 class="proj-title">Interactive e-Learning Modules</h1>
   <p class="proj-sub">Two interactive e-learning modules built with Articulate Storyline — demonstrating hands-on capability with industry-standard authoring tools, structured learning objectives, branching scenarios, and assessment components aligned with instructional design best practices.</p>
-  <div class="proj-meta">
-    <div class="pm-item"><span class="pm-num">2</span><span class="pm-label">Modules Built</span></div>
-    <div class="pm-item"><span class="pm-num">Storyline</span><span class="pm-label">Authoring Tool</span></div>
-    <div class="pm-item"><span class="pm-num">ADDIE</span><span class="pm-label">Framework Used</span></div>
-    <div class="pm-item"><span class="pm-num">LXD</span><span class="pm-label">Design Approach</span></div>
-  </div>
+
   <div class="tag-row">
     <span class="ptag pt-teal">Articulate Storyline</span>
     <span class="ptag pt-violet">Interactive e-Learning</span>
@@ -165,36 +189,22 @@ a{text-decoration:none;color:inherit}
     <div class="course-block">
       <div class="course-label">📘 Module 1 — Substance Abuse</div>
       <p class="course-meta">An interactive learning module covering substance abuse awareness — designed with scenario-based learning, engaging visuals, and knowledge checks to drive behaviour change and awareness.</p>
-      <div class="articulate-wrap">
-        <iframe src="https://share.articulate.com/uEm_YsSUQC0L1dR8JgkU7" 
-                title="Substance Abuse — Interactive e-Learning"
-                allow="fullscreen"
-                loading="lazy">
-        </iframe>
-      </div>
-      <a href="https://share.articulate.com/uEm_YsSUQC0L1dR8JgkU7" target="_blank" class="open-btn">
-        ↗ Open Fullscreen
+      <a href="https://share.articulate.com/uEm_YsSUQC0L1dR8JgkU7" target="_blank" class="open-btn" style="font-size:1rem;padding:.9rem 2rem;">
+        ↗ Open Interactive Module
       </a>
     </div>
 
     <div class="course-block">
       <div class="course-label">📗 Module 2 — Digital Marketing Fundamentals</div>
       <p class="course-meta">An interactive e-learning module on digital marketing fundamentals — structured with clear learning objectives, interactive content blocks, and assessments aligned with Bloom's Taxonomy.</p>
-      <div class="articulate-wrap">
-        <iframe src="https://share.articulate.com/ui9g_Ndde4UY-7FE-Xpgk"
-                title="Digital Marketing Fundamentals — Interactive e-Learning"
-                allow="fullscreen"
-                loading="lazy">
-        </iframe>
-      </div>
-      <a href="https://share.articulate.com/ui9g_Ndde4UY-7FE-Xpgk" target="_blank" class="open-btn">
-        ↗ Open Fullscreen
+      <a href="https://share.articulate.com/ui9g_Ndde4UY-7FE-Xpgk" target="_blank" class="open-btn" style="font-size:1rem;padding:.9rem 2rem;">
+        ↗ Open Interactive Module
       </a>
     </div>
 
   </div>
 
-  <div class="divider"></div>
+    <div class="divider"></div>
 
   <p class="sec-label">My Process</p>
   <h2 class="sec-title">How I Build e-Learning</h2>

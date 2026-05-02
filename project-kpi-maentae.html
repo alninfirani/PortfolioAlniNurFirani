@@ -9,14 +9,14 @@ body{font-family:'DM Sans',sans-serif;background:#F5F2EE;color:#0D1B2A;overflow-
 a{text-decoration:none;color:inherit}
 
 /* NAV */
-.pnav{position:fixed;top:0;left:0;width:100%;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 3rem;background:rgba(245,242,238,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.06)}
+.pnav{position:fixed;top:0;left:0;width:100%;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 2.5rem;background:rgba(245,242,238,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.06)}
 .pnav-logo{font-family:'Fraunces',serif;font-size:1.1rem;font-weight:800;color:var(--navy)}
 .pnav-logo span{color:var(--teal)}
 .back-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.55rem 1.2rem;border-radius:99px;background:var(--navy);color:#fff;font-size:.82rem;font-weight:600;transition:opacity .2s}
 .back-btn:hover{opacity:.85}
 
 /* HERO */
-.proj-hero{padding:7rem 4rem 4rem;max-width:1100px;margin:0 auto}
+.proj-hero{padding:7rem 2.5rem 3rem;max-width:900px;margin:0 auto}
 .proj-tag{display:inline-block;background:var(--gold);color:var(--navy);font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.3rem .8rem;border-radius:99px;margin-bottom:1rem}
 .proj-title{font-family:'Fraunces',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:800;line-height:1.1;letter-spacing:-1px;margin-bottom:1rem}
 .proj-sub{color:var(--gray);font-size:1rem;line-height:1.7;max-width:620px;margin-bottom:2rem}
@@ -35,7 +35,7 @@ a{text-decoration:none;color:inherit}
 .pt-navy{background:#E8EBF0;color:#0D1B2A}
 
 /* SECTION */
-.proj-section{max-width:1100px;margin:0 auto;padding:0 4rem 4rem}
+.proj-section{max-width:900px;margin:0 auto;padding:0 2.5rem 4rem}
 .sec-label{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--teal);margin-bottom:.8rem}
 .sec-title{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:800;margin-bottom:1rem}
 .sec-body{font-size:.95rem;line-height:1.8;color:#3A3F50;margin-bottom:1.5rem}
@@ -75,29 +75,56 @@ a{text-decoration:none;color:inherit}
 .proj-footer a{color:var(--teal)}
 
 /* DIVIDER */
-.divider{height:1px;background:rgba(0,0,0,.07);margin:0 4rem 3rem;max-width:1100px;margin-left:auto;margin-right:auto}
+.divider{height:1px;background:rgba(0,0,0,.07);max-width:900px;margin:0 auto 3rem}
 
 @media(max-width:768px){.proj-hero,.proj-section{padding-left:1.5rem;padding-right:1.5rem}.gallery{grid-template-columns:1fr}.video-grid{grid-template-columns:1fr}.pnav{padding:1rem 1.5rem}.process-grid{grid-template-columns:1fr 1fr}}
+
+    /* ── LAYOUT WIDTH FIX ── */
+    .proj-hero {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 7rem 2.5rem 3rem;
+    }
+    .proj-section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2.5rem 4rem;
+    }
+    .divider {
+      max-width: 900px;
+      margin: 0 auto 3rem;
+      height: 1px;
+      background: rgba(0,0,0,.07);
+    }
+    .pnav {
+      padding: 1rem 2.5rem !important;
+    }
+    /* Fix grids on smaller viewports */
+    .course-pair { gap: 1.5rem; }
+    @media (max-width: 700px) {
+      .course-pair { grid-template-columns: 1fr; }
+      .process-grid { grid-template-columns: 1fr; }
+      .gallery { grid-template-columns: 1fr; }
+    }
+
 </style></head><body>
 <nav class="pnav">
   <div class="pnav-logo">Alni<span>.</span></div>
   <a href="index.html" class="back-btn">← Back to Portfolio</a>
 </nav>
 <div class="proj-hero">
-  <span class="proj-tag">KPI Institute · Maentae · Middle East Market</span>
+  <span class="proj-tag">KPI Institute · The KPI Institute (Remote, Australia)</span>
   <h1 class="proj-title">QA Auditing &amp; Global<br/>Programme Development</h1>
   <p class="proj-sub">Quality assurance of 50+ learning modules using structured rubrics, while simultaneously developing and editing programmes for Maentae's Middle East market — delivered in both Face-to-Face and Live Online formats.</p>
   <div class="proj-meta">
     <div class="pm-item"><span class="pm-num">50+</span><span class="pm-label">Modules Audited</span></div>
     <div class="pm-item"><span class="pm-num">40+</span><span class="pm-label">Courses Reviewed</span></div>
-    <div class="pm-item"><span class="pm-num">3</span><span class="pm-label">Programme Lines</span></div>
-    <div class="pm-item"><span class="pm-num">2</span><span class="pm-label">Delivery Formats</span></div>
+
   </div>
   <div class="tag-row">
     <span class="ptag pt-teal">QA Auditing</span>
     <span class="ptag pt-violet">ADDIE</span>
     <span class="ptag pt-gold">Global Remote</span>
-    <span class="ptag pt-coral">Middle East Market</span>
     <span class="ptag pt-navy">Live Online &amp; F2F</span>
     <span class="ptag pt-teal">Instructional Design</span>
   </div>
@@ -120,17 +147,211 @@ a{text-decoration:none;color:inherit}
   </div>
 
   <div class="divider"></div>
-  <p class="sec-label">My Process</p>
-  <h2 class="sec-title">How I Work</h2>
-  <div class="process-grid">
-    <div class="proc-card"><div class="proc-num">01</div><div class="proc-title">Module Review</div><div class="proc-desc">Systematic review of each module against QA rubric criteria</div></div>
-    <div class="proc-card"><div class="proc-num">02</div><div class="proc-title">Gap Analysis</div><div class="proc-desc">Identify content gaps, citation issues, and formatting inconsistencies</div></div>
-    <div class="proc-card"><div class="proc-num">03</div><div class="proc-title">Improvement Report</div><div class="proc-desc">Structured evaluation reports with evidence-based recommendations</div></div>
-    <div class="proc-card"><div class="proc-num">04</div><div class="proc-title">Programme Editing</div><div class="proc-desc">Adapt content for Middle East market — cultural fit, language, and delivery format</div></div>
-    <div class="proc-card"><div class="proc-num">05</div><div class="proc-title">Format Adaptation</div><div class="proc-desc">Develop F2F and Live Online versions of each programme</div></div>
-    <div class="proc-card"><div class="proc-num">06</div><div class="proc-title">Cross-team Collab</div><div class="proc-desc">Work with SMEs and content teams globally in remote-first environment</div></div>
+
+  <!-- QA PHILOSOPHY -->
+  <p class="sec-label">QA Philosophy</p>
+  <h2 class="sec-title">My QA Principles at KPI Institute</h2>
+  <p class="sec-body">My approach to QA is not just checking boxes — it's about ensuring every piece of content genuinely serves the learner. I work across two product types: <strong>content scripts</strong> (VO, slide text, slide notes, citations) and <strong>pre-recorded learning products</strong> (H5P interactives, worksheets, case studies, exercises). Every element is reviewed against structured rubrics before advancing to the Copywriter (CW) stage.</p>
+
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2.5rem;">
+    <div style="background:linear-gradient(135deg,#0ABFBC,#12D9D6);border-radius:16px;padding:1.6rem;color:#fff;">
+      <div style="font-size:1.8rem;margin-bottom:.6rem;">🎯</div>
+      <div style="font-weight:700;font-size:.95rem;margin-bottom:.4rem;">One Idea Per Slide</div>
+      <div style="font-size:.8rem;opacity:.85;line-height:1.5;">Every slide must carry exactly one clear idea. Overlapping contexts are flagged and restructured to support AREL format.</div>
+    </div>
+    <div style="background:linear-gradient(135deg,#7C4DFF,#A07AFE);border-radius:16px;padding:1.6rem;color:#fff;">
+      <div style="font-size:1.8rem;margin-bottom:.6rem;">🔗</div>
+      <div style="font-weight:700;font-size:.95rem;margin-bottom:.4rem;">VO–Slide Alignment</div>
+      <div style="font-size:.8rem;opacity:.85;line-height:1.5;">Voice-over must explain the context shown on screen — not repeat it. I review for repetition, missing citations, and word-count compliance.</div>
+    </div>
+    <div style="background:linear-gradient(135deg,#F76E6E,#F9A09A);border-radius:16px;padding:1.6rem;color:#fff;">
+      <div style="font-size:1.8rem;margin-bottom:.6rem;">📐</div>
+      <div style="font-weight:700;font-size:.95rem;margin-bottom:.4rem;">Scaffolded Activities</div>
+      <div style="font-size:.8rem;opacity:.85;line-height:1.5;">H5P, worksheets, and exercises must scaffold progressively — no duplication between activity types, each building toward the learning objective.</div>
+    </div>
+    <div style="background:linear-gradient(135deg,#F7C948,#FBD970);border-radius:16px;padding:1.6rem;color:#0D1B2A;">
+      <div style="font-size:1.8rem;margin-bottom:.6rem;">✅</div>
+      <div style="font-weight:700;font-size:.95rem;margin-bottom:.4rem;">Iterative Resolution</div>
+      <div style="font-size:.8rem;opacity:.8;line-height:1.5;">Feedback is tracked per element — marked "Done" when resolved, with suggestions provided for complex issues. Nothing advances until fully signed off.</div>
+    </div>
+    <div style="background:linear-gradient(135deg,#11C784,#4EDBA8);border-radius:16px;padding:1.6rem;color:#fff;">
+      <div style="font-size:1.8rem;margin-bottom:.6rem;">💬</div>
+      <div style="font-weight:700;font-size:.95rem;margin-bottom:.4rem;">Specific, Actionable Feedback</div>
+      <div style="font-size:.8rem;opacity:.85;line-height:1.5;">Feedback is never vague. I reference exact sections, cite the standard being violated, and provide a clear suggestion for resolution.</div>
+    </div>
+    <div style="background:linear-gradient(135deg,#0D1B2A,#1E3250);border-radius:16px;padding:1.6rem;color:#fff;">
+      <div style="font-size:1.8rem;margin-bottom:.6rem;">🌐</div>
+      <div style="font-weight:700;font-size:.95rem;margin-bottom:.4rem;">Cross-cultural Sensitivity</div>
+      <div style="font-size:.8rem;opacity:.85;line-height:1.5;">Content is reviewed for cultural appropriateness — particularly for programmes adapted for the Middle East market in F2F and Live Online formats.</div>
+    </div>
   </div>
-</div>
+
+  <div class="divider"></div>
+
+  <!-- WHAT I REVIEW -->
+  <p class="sec-label">Scope of Review</p>
+  <h2 class="sec-title">What I QA — Two Product Types</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:2.5rem;">
+    <div class="proc-card" style="border-left:4px solid #0ABFBC;">
+      <div style="font-size:1.3rem;margin-bottom:.6rem;">📝 Content Script QA</div>
+      <div class="proc-desc" style="font-size:.85rem;line-height:1.7;">
+        <strong>VO Script</strong> — clarity, flow, study context explanation<br>
+        <strong>Slide Text</strong> — 1 idea per slide, thesis–body alignment<br>
+        <strong>Slide Notes</strong> — formatting, word count, heading naming<br>
+        <strong>Citations</strong> — attribution accuracy per resource<br>
+        <strong>Conclusion</strong> — 60-word compliance, motivational tone
+      </div>
+    </div>
+    <div class="proc-card" style="border-left:4px solid #7C4DFF;">
+      <div style="font-size:1.3rem;margin-bottom:.6rem;">🎬 Pre-recorded Product QA</div>
+      <div class="proc-desc" style="font-size:.85rem;line-height:1.7;">
+        <strong>H5P Interactives</strong> — relevance, scaffolding, uniqueness vs worksheet<br>
+        <strong>Worksheets</strong> — title relevance, activity depth, scenario clarity<br>
+        <strong>Case Studies</strong> — citation, intro text, justification accuracy<br>
+        <strong>Exercises</strong> — scenario explanation, scaffolding structure<br>
+        <strong>Examples</strong> — context relevance, activity comprehensiveness
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- CASE STUDY -->
+  <p class="sec-label">Case Study — Real QA in Action</p>
+  <h2 class="sec-title">Substance Abuse Module — Full QA Review</h2>
+  <p class="sec-body">Here's how I actually conduct a QA review — section by section, element by element. This case study shows my feedback process across both content scripts and pre-recorded products for the Substance Abuse module.</p>
+
+  <!-- TIMELINE / FLOW -->
+  <div style="display:flex;gap:.5rem;align-items:center;margin-bottom:2rem;flex-wrap:wrap;">
+    <div style="background:#0ABFBC;color:#fff;padding:.5rem 1.2rem;border-radius:99px;font-size:.8rem;font-weight:700;">1. Receive Module</div>
+    <div style="color:#6B7080;font-size:1.2rem;">→</div>
+    <div style="background:#EDE8FF;color:#6030DD;padding:.5rem 1.2rem;border-radius:99px;font-size:.8rem;font-weight:700;">2. Section Review</div>
+    <div style="color:#6B7080;font-size:1.2rem;">→</div>
+    <div style="background:#FDEAEA;color:#C94343;padding:.5rem 1.2rem;border-radius:99px;font-size:.8rem;font-weight:700;">3. Write Feedback</div>
+    <div style="color:#6B7080;font-size:1.2rem;">→</div>
+    <div style="background:#FEF8DC;color:#A87B00;padding:.5rem 1.2rem;border-radius:99px;font-size:.8rem;font-weight:700;">4. Track Resolution</div>
+    <div style="color:#6B7080;font-size:1.2rem;">→</div>
+    <div style="background:#0D1B2A;color:#fff;padding:.5rem 1.2rem;border-radius:99px;font-size:.8rem;font-weight:700;">5. Ready for CW ✓</div>
+  </div>
+
+  <!-- CONTENT QA TABLE -->
+  <div style="background:#fff;border-radius:16px;padding:2rem;box-shadow:0 4px 20px rgba(0,0,0,.07);margin-bottom:1.5rem;overflow-x:auto;">
+    <div style="display:flex;align-items:center;gap:.8rem;margin-bottom:1.2rem;">
+      <span style="background:#E0FAF9;color:#0899A0;padding:.3rem .8rem;border-radius:99px;font-size:.75rem;font-weight:700;">PART 1</span>
+      <span style="font-weight:700;color:#0D1B2A;">Content Script QA — Section by Section</span>
+    </div>
+    <table style="width:100%;border-collapse:collapse;font-size:.83rem;">
+      <thead>
+        <tr style="background:#0D1B2A;color:#fff;">
+          <th style="padding:.8rem 1rem;text-align:left;border-radius:8px 0 0 0;white-space:nowrap;">Section</th>
+          <th style="padding:.8rem 1rem;text-align:left;white-space:nowrap;">Status</th>
+          <th style="padding:.8rem 1rem;text-align:left;">QA Feedback Given</th>
+          <th style="padding:.8rem 1rem;text-align:left;border-radius:0 8px 0 0;white-space:nowrap;">Resolution</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background:#F5F2EE;">
+          <td style="padding:.8rem 1rem;font-weight:600;white-space:nowrap;">Challenges</td>
+          <td style="padding:.8rem 1rem;"><span style="background:#DBEAFE;color:#1D4ED8;padding:.25rem .7rem;border-radius:99px;font-size:.72rem;font-weight:700;">Ready for CW</span></td>
+          <td style="padding:.8rem 1rem;color:#4A5060;line-height:1.6;"><strong>C1–C3:</strong> Overlapping contexts across slides — repetitive sentences make the VO unclear and don't support AREL format. VO must explain the study context shown; slide notes and missing citations need adjustment.</td>
+          <td style="padding:.8rem 1rem;"><span style="color:#0ABFBC;font-weight:600;">✓ Done</span></td>
+        </tr>
+        <tr>
+          <td style="padding:.8rem 1rem;font-weight:600;white-space:nowrap;">Misconceptions</td>
+          <td style="padding:.8rem 1rem;"><span style="background:#DBEAFE;color:#1D4ED8;padding:.25rem .7rem;border-radius:99px;font-size:.72rem;font-weight:700;">Ready for CW</span></td>
+          <td style="padding:.8rem 1rem;color:#4A5060;line-height:1.6;"><strong>M1:</strong> Context explains facts, not misconceptions — reframe. <strong>M2:</strong> Adjust heading on thesis statement. <strong>M3:</strong> Slide text must directly address the misconception; VO should avoid unnecessary discussion; fix word count in conclusion.</td>
+          <td style="padding:.8rem 1rem;"><span style="color:#0ABFBC;font-weight:600;">✓ Done</span></td>
+        </tr>
+        <tr style="background:#F5F2EE;">
+          <td style="padding:.8rem 1rem;font-weight:600;white-space:nowrap;">Importance</td>
+          <td style="padding:.8rem 1rem;"><span style="background:#DBEAFE;color:#1D4ED8;padding:.25rem .7rem;border-radius:99px;font-size:.72rem;font-weight:700;">Ready for CW</span></td>
+          <td style="padding:.8rem 1rem;color:#4A5060;line-height:1.6;">Main idea per slide is unclear — violates the <em>1 slide, 1 idea</em> standard. Determine and commit to a single key point per slide before advancing.</td>
+          <td style="padding:.8rem 1rem;"><span style="color:#0ABFBC;font-weight:600;">✓ Done</span></td>
+        </tr>
+        <tr>
+          <td style="padding:.8rem 1rem;font-weight:600;white-space:nowrap;">Benefits</td>
+          <td style="padding:.8rem 1rem;"><span style="background:#DBEAFE;color:#1D4ED8;padding:.25rem .7rem;border-radius:99px;font-size:.72rem;font-weight:700;">Ready for CW</span></td>
+          <td style="padding:.8rem 1rem;color:#4A5060;line-height:1.6;"><strong>B1–B3:</strong> Repetitive contexts between thesis and body — define 1 idea per slide and eliminate duplication. Conclusion must meet 60-word standard.</td>
+          <td style="padding:.8rem 1rem;"><span style="color:#0ABFBC;font-weight:600;">✓ Done</span></td>
+        </tr>
+        <tr style="background:#F5F2EE;">
+          <td style="padding:.8rem 1rem;font-weight:600;white-space:nowrap;">Practices</td>
+          <td style="padding:.8rem 1rem;"><span style="background:#DBEAFE;color:#1D4ED8;padding:.25rem .7rem;border-radius:99px;font-size:.72rem;font-weight:700;">Ready for CW</span></td>
+          <td style="padding:.8rem 1rem;color:#4A5060;line-height:1.6;">Thesis and body don't yet align with content standards — smoother flow needed. Slide note formatting and heading naming in tips section need updating to fit context.</td>
+          <td style="padding:.8rem 1rem;"><span style="color:#0ABFBC;font-weight:600;">✓ Minor adjustments</span></td>
+        </tr>
+        <tr>
+          <td style="padding:.8rem 1rem;font-weight:600;white-space:nowrap;">Habits</td>
+          <td style="padding:.8rem 1rem;"><span style="background:#DBEAFE;color:#1D4ED8;padding:.25rem .7rem;border-radius:99px;font-size:.72rem;font-weight:700;">Ready for CW</span></td>
+          <td style="padding:.8rem 1rem;color:#4A5060;line-height:1.6;"><strong>H2:</strong> Minimize focus on negative aspects — maintain a positive, motivational message. <strong>H3:</strong> Avoid using "prioritizing" in best practice challenge; explain self-care for recovery in practical detail.</td>
+          <td style="padding:.8rem 1rem;"><span style="color:#0ABFBC;font-weight:600;">✓ Done</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- PRE-RECORDED PRODUCT QA TABLE -->
+  <div style="background:#fff;border-radius:16px;padding:2rem;box-shadow:0 4px 20px rgba(0,0,0,.07);margin-bottom:3rem;overflow-x:auto;">
+    <div style="display:flex;align-items:center;gap:.8rem;margin-bottom:1.2rem;">
+      <span style="background:#EDE8FF;color:#6030DD;padding:.3rem .8rem;border-radius:99px;font-size:.75rem;font-weight:700;">PART 3</span>
+      <span style="font-weight:700;color:#0D1B2A;">Pre-recorded Product QA — H5P, Worksheet, Case Study, Exercise</span>
+    </div>
+    <table style="width:100%;border-collapse:collapse;font-size:.83rem;">
+      <thead>
+        <tr style="background:#0D1B2A;color:#fff;">
+          <th style="padding:.8rem 1rem;text-align:left;border-radius:8px 0 0 0;white-space:nowrap;">Element</th>
+          <th style="padding:.8rem 1rem;text-align:left;white-space:nowrap;">Status</th>
+          <th style="padding:.8rem 1rem;text-align:left;">QA Feedback Given</th>
+          <th style="padding:.8rem 1rem;text-align:left;border-radius:0 8px 0 0;white-space:nowrap;">Resolution</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background:#F5F2EE;">
+          <td style="padding:.8rem 1rem;font-weight:600;">Example 1 H5P</td>
+          <td style="padding:.8rem 1rem;"><span style="background:#DBEAFE;color:#1D4ED8;padding:.25rem .7rem;border-radius:99px;font-size:.72rem;font-weight:700;">Ready for CW</span></td>
+          <td style="padding:.8rem 1rem;color:#4A5060;">Context is irrelevant to the element — adjust to ensure direct alignment with learning objective</td>
+          <td style="padding:.8rem 1rem;"><span style="color:#0ABFBC;font-weight:600;">✓ Done</span></td>
+        </tr>
+        <tr>
+          <td style="padding:.8rem 1rem;font-weight:600;">Example 1 Worksheet</td>
+          <td style="padding:.8rem 1rem;"><span style="background:#DBEAFE;color:#1D4ED8;padding:.25rem .7rem;border-radius:99px;font-size:.72rem;font-weight:700;">Ready for CW</span></td>
+          <td style="padding:.8rem 1rem;color:#4A5060;">Title is not relevant to the activity context — rewrite with accurate descriptor</td>
+          <td style="padding:.8rem 1rem;"><span style="color:#0ABFBC;font-weight:600;">✓ Done</span></td>
+        </tr>
+        <tr style="background:#F5F2EE;">
+          <td style="padding:.8rem 1rem;font-weight:600;">Example 2 Worksheet</td>
+          <td style="padding:.8rem 1rem;"><span style="background:#DBEAFE;color:#1D4ED8;padding:.25rem .7rem;border-radius:99px;font-size:.72rem;font-weight:700;">Ready for CW</span></td>
+          <td style="padding:.8rem 1rem;color:#4A5060;">Add 1 activity: develop a proactive plan to strengthen learner's ability to overcome obstacles and maintain their recovery journey</td>
+          <td style="padding:.8rem 1rem;"><span style="color:#0ABFBC;font-weight:600;">✓ Done</span></td>
+        </tr>
+        <tr>
+          <td style="padding:.8rem 1rem;font-weight:600;">Example 3 H5P</td>
+          <td style="padding:.8rem 1rem;"><span style="background:#DBEAFE;color:#1D4ED8;padding:.25rem .7rem;border-radius:99px;font-size:.72rem;font-weight:700;">Ready for CW</span></td>
+          <td style="padding:.8rem 1rem;color:#4A5060;">Activity needs more depth — add two additional activities to create a more comprehensive learning experience</td>
+          <td style="padding:.8rem 1rem;"><span style="color:#0ABFBC;font-weight:600;">✓ Done</span></td>
+        </tr>
+        <tr style="background:#F5F2EE;">
+          <td style="padding:.8rem 1rem;font-weight:600;">Case Study 1 &amp; 2</td>
+          <td style="padding:.8rem 1rem;"><span style="background:#DBEAFE;color:#1D4ED8;padding:.25rem .7rem;border-radius:99px;font-size:.72rem;font-weight:700;">Ready for CW</span></td>
+          <td style="padding:.8rem 1rem;color:#4A5060;">Add citation for justification on both; adjust intro text on first page to better contextualize the case</td>
+          <td style="padding:.8rem 1rem;"><span style="color:#0ABFBC;font-weight:600;">✓ Intro adjusted</span></td>
+        </tr>
+        <tr>
+          <td style="padding:.8rem 1rem;font-weight:600;">Exercise 1 H5P</td>
+          <td style="padding:.8rem 1rem;"><span style="background:#DBEAFE;color:#1D4ED8;padding:.25rem .7rem;border-radius:99px;font-size:.72rem;font-weight:700;">Ready for CW</span></td>
+          <td style="padding:.8rem 1rem;color:#4A5060;">Restructure as a scaffolding activity — currently too similar to the worksheet. Add two distinct questions that build on worksheet content</td>
+          <td style="padding:.8rem 1rem;"><span style="color:#F7C948;font-weight:600;">⚡ 2 questions added</span></td>
+        </tr>
+        <tr style="background:#F5F2EE;">
+          <td style="padding:.8rem 1rem;font-weight:600;">Exercise 1 Worksheet</td>
+          <td style="padding:.8rem 1rem;"><span style="background:#DBEAFE;color:#1D4ED8;padding:.25rem .7rem;border-radius:99px;font-size:.72rem;font-weight:700;">Ready for CW</span></td>
+          <td style="padding:.8rem 1rem;color:#4A5060;">Scenario needs more explanation — currently too brief to give learners sufficient context for meaningful response</td>
+          <td style="padding:.8rem 1rem;"><span style="color:#F76E6E;font-weight:600;">💬 Suggestion provided</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
 <footer class="proj-footer">
   <p>Alni Nur Firani · <a href="mailto:alninfirani@gmail.com">alninfirani@gmail.com</a> · <a href="index.html">← Back to Portfolio</a></p>
 </footer>
